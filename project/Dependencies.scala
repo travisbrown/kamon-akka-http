@@ -22,20 +22,20 @@ object Dependencies {
   )
 
   val aspectjVersion    = "1.8.9"
-  val AkkaVersion       = "2.4.11"
+  val AkkaVersion       = "2.4.16"
+  val AkkaHttpVersion   = "10.0.1"
   val KamonVersion      = "0.6.3"
-  val slf4jVersion      = "1.7.7"
+  val slf4jVersion      = "1.7.21"
 
   val aspectJ           = "org.aspectj"          % "aspectjweaver"          % aspectjVersion
-  val httpCore          = "com.typesafe.akka"   %% "akka-http-core"         % AkkaVersion
-  val httpExperimental  = "com.typesafe.akka"   %% "akka-http-experimental" % AkkaVersion
-  val httpTestKit       = "com.typesafe.akka"   %% "akka-http-testkit"      % AkkaVersion
-  val kamonCore         = "io.kamon"            %% "kamon-core"             % KamonVersion
+  val httpCore          = "com.typesafe.akka"   %% "akka-http"              % AkkaHttpVersion
+  val httpTestKit       = "com.typesafe.akka"   %% "akka-http-testkit"      % AkkaHttpVersion
+  val kamonCore         = "io.kamon"            %% "kamon-core"             % "0.6.5"
   val kamonAkka         = "io.kamon"            %% "kamon-akka"             % KamonVersion
-  val kamonLogReporter  = "io.kamon"            %%  "kamon-log-reporter"    % KamonVersion
+  val kamonLogReporter  = "io.kamon"            %% "kamon-log-reporter"     % KamonVersion
   val slf4jApi          = "org.slf4j"            % "slf4j-api"              % slf4jVersion
   val slf4jnop          = "org.slf4j"            % "slf4j-nop"              % slf4jVersion
-  val scalatest         = "org.scalatest"       %% "scalatest"              % "2.2.6"
+  val scalatest         = "org.scalatest"       %% "scalatest"              % "3.0.1"
 
   def compile   (deps: ModuleID*): Seq[ModuleID] = deps map (_ % "compile")
   def provided  (deps: ModuleID*): Seq[ModuleID] = deps map (_ % "provided")

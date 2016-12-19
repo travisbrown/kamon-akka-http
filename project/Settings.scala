@@ -31,7 +31,7 @@ object Settings {
     scalaVersion := ScalaVersion,
     ivyScala := ivyScala.value map { _.copy(overrideScalaVersion = true) },
     resolvers ++= Dependencies.resolutionRepos,
-    version <<= version in ThisBuild,
+    version := (version in ThisBuild).value,
     moduleName := s"${moduleName.value}-experimental",
     parallelExecution in Global     := false,
     javacOptions                    := Seq(
