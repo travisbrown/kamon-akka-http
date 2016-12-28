@@ -32,7 +32,7 @@ object Settings {
     ivyScala := ivyScala.value map { _.copy(overrideScalaVersion = true) },
     resolvers ++= Dependencies.resolutionRepos,
     version := (version in ThisBuild).value,
-    moduleName := s"${moduleName.value}-experimental",
+    moduleName := s"${moduleName.value}",
     parallelExecution in Global     := false,
     javacOptions                    := Seq(
       "-Xlint:-options",
